@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:jcyl_app_flutter/data/models/country_dto.dart';
+import 'package:jcyl_app_flutter/country/data/models/country_dto.dart';
 import 'package:jcyl_app_flutter/utils/urls.dart';
 
 class RestCountryService {
