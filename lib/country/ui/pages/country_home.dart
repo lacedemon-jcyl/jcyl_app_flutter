@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
 
-class CountryHome extends StatelessWidget {
+int counter = 0;
+
+class CountryHome extends StatefulWidget {
   const CountryHome({super.key});
 
   @override
+  State<CountryHome> createState() => _CountryHomeState();
+}
+
+class _CountryHomeState extends State<CountryHome> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          counter++;
+          print(counter);
+          setState(() {});
+        },
+      ),
       appBar: AppBar(
         title: Text('Country Home'),
         automaticallyImplyLeading: false,
@@ -17,7 +31,7 @@ class CountryHome extends StatelessWidget {
         ),
       ),
 
-      body: Center(child: Text('Hello World!')),
+      body: Center(child: Text('$counter', style: TextStyle(fontSize: 48))),
     );
   }
 }
