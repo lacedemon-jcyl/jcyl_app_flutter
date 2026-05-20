@@ -5,6 +5,19 @@ class CountryHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('Hello World!')));
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Country Home'),
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
+      ),
+
+      body: Center(child: Text('Hello World!')),
+    );
   }
 }
