@@ -63,6 +63,31 @@ class CountryHome extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 30),
+                FilledButton(
+                  onPressed: () {
+                    context.read<CountryCubit>().addCountryDataToFirestore();
+                  },
+                  child: Text('Guardar en Firestore'),
+                ),
+                SizedBox(height: 30),
+                FilledButton(
+                  onPressed: () {
+                    context
+                        .read<CountryCubit>()
+                        .deleteCountryDataFromFirestore();
+                  },
+                  child: Text('Eliminar de Firestore'),
+                ),
+                SizedBox(height: 30),
+                FilledButton(
+                  onPressed: () {
+                    context.read<CountryCubit>().getCountryByFirebase(
+                      state.countryDto?.name.common ?? '',
+                    );
+                  },
+                  child: Text('Obtener de Firestore'),
+                ),
               ],
             ),
           ),
