@@ -9,7 +9,7 @@ class RestCountryService {
     Uri url = Uri.parse(urlString);
     CountryDto? country;
     try {
-      final response = await http.post(url);
+      final response = await http.get(url);
       final bodyString = response.body;
       final body = jsonDecode(bodyString);
       List<dynamic> myResponse = body;

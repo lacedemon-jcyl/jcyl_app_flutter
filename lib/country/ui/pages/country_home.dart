@@ -11,14 +11,14 @@ class CountryHome extends StatelessWidget {
     return BlocBuilder<CountryCubit, CountryState>(
       builder: (context, state) {
         return Scaffold(
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              context.read<CountryCubit>().increment();
-              // counter++;
-              // print(counter);
-              // setState(() {});
-            },
-          ),
+          // floatingActionButton: FloatingActionButton(
+          //   onPressed: () {
+          //     context.read<CountryCubit>().getCountry('Peru');
+          //     // counter++;
+          //     // print(counter);
+          //     // setState(() {});
+          //   },
+          // ),
           appBar: AppBar(
             title: Text('Country Home'),
             automaticallyImplyLeading: false,
@@ -31,7 +31,32 @@ class CountryHome extends StatelessWidget {
           ),
 
           body: Center(
-            child: Text('${state.counter}', style: TextStyle(fontSize: 48)),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        context.read<CountryCubit>().getCountry('spain');
+                      },
+                      child: Text('España'),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        context.read<CountryCubit>().getCountry('peru');
+                      },
+                      child: Text('Peru'),
+                    ),
+                  ],
+                ),
+                Text(
+                  state.countryDto?.flag ?? '',
+                  style: TextStyle(fontSize: 48),
+                ),
+              ],
+            ),
           ),
         );
       },
