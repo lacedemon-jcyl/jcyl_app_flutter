@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jcyl_app_flutter/country/cubits/country_cubit.dart';
 import 'package:jcyl_app_flutter/country/ui/pages/country_home.dart';
 import 'package:jcyl_app_flutter/home/pages/home_page.dart';
 import 'package:jcyl_app_flutter/meetup/ui/pages/meetup_home.dart';
@@ -12,12 +14,15 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomePage(),
-      routes: {
-        '/meetup': (context) => MeetupHome(),
-        '/country': (context) => CountryHome(),
-      },
+    return BlocProvider<CountryCubit>(
+      create: (context) => CountryCubit(),
+      child: MaterialApp(
+        home: HomePage(),
+        routes: {
+          '/meetup': (context) => MeetupHome(),
+          '/country': (context) => CountryHome(),
+        },
+      ),
     );
   }
 }
