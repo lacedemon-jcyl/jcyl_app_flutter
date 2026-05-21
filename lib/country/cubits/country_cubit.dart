@@ -5,6 +5,10 @@ class CountryCubit extends Cubit<CountryState> {
   CountryCubit() : super(CountryState.initial());
 
   void increment() {
-    state.copyWith(counter: state.counter + 1);
+    int myCounter = state.counter;
+    myCounter++;
+    print(myCounter);
+
+    emit(state.copyWith(counter: myCounter));
   }
 }
