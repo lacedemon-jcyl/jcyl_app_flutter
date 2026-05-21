@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "482930125600",
+    "project_id": "jcyl-lacedemon",
+    "storage_bucket": "jcyl-lacedemon.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482930125600:android:8128dbb4775fcf12be0545",
+        "android_client_info": {
+          "package_name": "com.example.jcyl_app_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe-SBfDgOFKL6S2-DvV1TIdy4JTUBhans"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

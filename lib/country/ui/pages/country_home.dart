@@ -51,9 +51,17 @@ class CountryHome extends StatelessWidget {
                     ),
                   ],
                 ),
-                Text(
-                  state.countryDto?.flag ?? '',
-                  style: TextStyle(fontSize: 48),
+                Column(
+                  children: [
+                    Text(
+                      state.countryDto?.subregion ?? '',
+                      style: TextStyle(fontSize: 48),
+                    ),
+                    Text(
+                      state.countryDto?.flag ?? '',
+                      style: TextStyle(fontSize: 48),
+                    ),
+                  ],
                 ),
               ],
             ),
